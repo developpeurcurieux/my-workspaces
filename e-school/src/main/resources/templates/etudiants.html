@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Liste des Etudiants</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />
+        <link rel="stylesheet" th:href="@{/css/style.css}" />
+    </head>
+    <body>
+    
+        <div class="container spacer">
+        <table class="table table-stripped">
+            <thead>
+                <tr>
+                    <th>Id</th><th>Nom</th><th>Date</th><th>Photo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="e : ${pageEtudiants.content}">
+                    <td th:text="${e.id}"></td>
+                    <td th:text="${e.nom}"></td>
+                    <td th:text="${e.dateNaissance}"></td>
+                    <td th:text="${e.email}"></td>
+                    <td th:text="${e.photo}"></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        
+        <div class="container">
+        	<ul>
+        		<li th:each="p:${pages}" th:text="${p}"></li>
+        	</ul>
+        </div>
+    </body>
+</html>
