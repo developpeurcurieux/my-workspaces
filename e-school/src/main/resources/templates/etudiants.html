@@ -30,8 +30,10 @@
         </div>
         
         <div class="container">
-        	<ul>
-        		<li th:each="p:${pages}" th:text="${p}"></li>
+        	<ul class="nav nav-pills">
+                    <li th:each="p : ${pages}" th:text="${p}" class="active">
+                        <a th:text="${p}" th:href="@{Index(page=${page})}"></a>
+                    </li>
         	</ul>
         </div>
     </body>

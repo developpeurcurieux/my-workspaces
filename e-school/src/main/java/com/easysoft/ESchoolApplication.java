@@ -22,14 +22,14 @@ public class ESchoolApplication {
             
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             
-            etudiantRepository.save(
-                    new Etudiant(null, "Ahmed", df.parse("1988-11-10"), "ahmed@gmail.com", "ahmed.jpg"));
+            etudiantRepository.save(new Etudiant(null, "Ahmed", df.parse("1988-11-10"), "ahmed@gmail.com", "ahmed.jpg"));
+            etudiantRepository.save(new Etudiant(null, "Tesla", df.parse("1988-11-10"), "tesla@gmail.com", "ahmed.jpg"));
+            etudiantRepository.save(new Etudiant(null, "Leslie", df.parse("1988-11-10"), "leslie@gmail.com", "ahmed.jpg"));
+            etudiantRepository.save(new Etudiant(null, "Ahmed", df.parse("1988-11-10"), "ahmed@gmail.com", "ahmed.jpg"));
+            etudiantRepository.save(new Etudiant(null, "Tesla", df.parse("1988-11-10"), "tesla@gmail.com", "ahmed.jpg"));
+            etudiantRepository.save(new Etudiant(null, "Leslie", df.parse("1988-11-10"), "leslie@gmail.com", "ahmed.jpg"));
+          
             
-            etudiantRepository.save(
-                    new Etudiant(null, "Tesla", df.parse("1988-11-10"), "tesla@gmail.com", "ahmed.jpg"));
-            
-            etudiantRepository.save(
-                    new Etudiant(null, "Leslie", df.parse("1988-11-10"), "leslie@gmail.com", "ahmed.jpg"));
             
             Page<Etudiant> etds = etudiantRepository.findAll(new PageRequest(0, 5));
             
