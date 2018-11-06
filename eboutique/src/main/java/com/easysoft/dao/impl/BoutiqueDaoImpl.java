@@ -72,8 +72,8 @@ public class BoutiqueDaoImpl implements BoutiqueDao {
 		Categorie categorie = categorieRepository.findById(idCategorie).get();
 		produit.setCategorie(categorie);
 		produitRepository.save(produit);
-		return new Produit();
-		//return produitRepository.findById(produit.getIdProduit()).get();
+		
+		return produitRepository.findById(produit.getIdProduit()).get();
 	}
 
 	@Override
