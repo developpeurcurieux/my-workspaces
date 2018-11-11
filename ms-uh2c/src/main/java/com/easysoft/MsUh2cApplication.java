@@ -33,6 +33,15 @@ public class MsUh2cApplication implements CommandLineRunner {
 
 		repositoryRestConfiguration.exposeIdsFor(Formation.class, Etudiant.class);
 
+/*
+		repositoryRestConfiguration.getCorsRegistry()
+				.addMapping("/**")
+				.allowedOrigins("*")
+				.allowedHeaders("*")
+				.allowedMethods("OPTIONS", "HEAD", "GET", "PUT", "POST", "DELETE", "PATCH");
+*/
+
+
 		Formation f1 = formationRepository.save(new Formation("PHP", 30));
 		Formation f2 = formationRepository.save(new Formation("Java", 200));
 		Formation f3 = formationRepository.save(new Formation("Oracle", 72));
