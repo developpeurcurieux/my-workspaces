@@ -1,0 +1,47 @@
+<div class="container spacer">
+  <div class="card">
+    <div class="card-header">Contacts</div>
+    <div class="card-body">
+
+      <div class="form-group">
+        <label for="motCle">Mot Clé</label>
+        <input id="motCle" class="form-control" type="text" [(ngModel)]="motCle" />
+        <button class="btn btn-primary" (click)="chercher()">Chercher</button>
+      </div>
+
+
+
+      <table class="table table-light">
+        <tbody>
+          <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Email</th>
+          </tr>
+          <!-- comme la page va se charger avant la reception complete des donnes de (http.get) dans le contacts.component.ts
+          pageContacts est null cela explique lexception, pour l'eviter on demande via un if (?) si il existe-->
+          <tr *ngFor="let c of pageContacts?.content">
+            <td>{{c.id}}</td>
+            <td>{{c.nom}}</td>
+            <td>{{c.prenom}}</td>
+            <td>{{c.email}}</td>
+            <td>
+              <a (click)="onEditContact(c.id)" class="page-link clickable">Edit</a>
+            </td>
+            <td>
+              <a (click)="onDeleteContact(c)" class="page-link clickable">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="container">
+        <ul class="pagination">
+          <li *ngFor="let p of pages; let i = index" class="page-item" [ngClass]="{'active': i == currentPage}">
+            <a class="page-link clickable" (click)="goToPage(i)">{{i}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

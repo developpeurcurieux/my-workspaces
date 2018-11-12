@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Update Contact
+    </div>
+    <div class="card-body">
+      <div>
+        <div class="form-group">
+          <label class="control-label">Nom:</label>
+          <input class="form-control" type="text" [(ngModel)]="contact.nom" />
+        </div>
+        <div class="form-group">
+          <label class="control-label">Prenom:</label>
+          <input class="form-control" type="text" [(ngModel)]="contact.prenom" />
+        </div>
+        <div class="form-group">
+          <label class="control-label">Email:</label>
+          <input class="form-control" type="email" [(ngModel)]="contact.email" />
+        </div>
+        <div class="form-group">
+          <label class="control-label">date de naissance:</label>
+          <input class="form-control" type="date" [(ngModel)]="contact.dateNaissance" />
+        </div>
+        <div class="form-group">
+          <label class="control-label">Telephone:</label>
+          <input class="form-control" type="text" [(ngModel)]="contact.tel" />
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-primary" (click)="updateContact()">Save</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Gallery
+    </div>
+    <div class="card-body">
+      <form #f="ngForm" (ngSubmit)="onSearch(f.value)" class="form-group">
+        <label for="motCle">Mot Clé:</label>
+        <input name="motCle" ngModel required [(ngModel)]="motCle" class="form-control" type="text" />
+        <button class="btn btn-primary" type="submit">Chercher</button>
+      </form>
+    </div>
+  </div>
+
+  <div *ngFor="let p of pagePhotos?.hits">
+    <div class="card">
+      <div class="card-header">{{p.tags}}</div>
+      <div class="card-body">
+        <p>User: {{p.user}}</p>
+        <img class="rounded" src="{{p.userImageURL}}" width="30" height="30">
+        <img src="{{p.previewURL}}" />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <ul class="nav nav-pills">
+      <li *ngFor="let page of pages; let i = index">
+        <a click="goToPage(i)">{{i}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
